@@ -1,0 +1,10 @@
+<svg id="loyalty-barcode"></svg>
+<script type="module">
+  import("./index-upc.js").then(({ default: applyJsBarcodeUpc }) => {
+    console.log("module: ", applyJsBarcodeUpc);
+    applyJsBarcodeUpc(
+      document.getElementById("loyalty-barcode"),
+      "42433960734",
+    );
+  })
+</script>
