@@ -3,14 +3,13 @@ import makeSVGRenderer from "./src/renderers/svg.js";
 
 
 function applyJsBarcodeUpc(svgElement, upcNumberText, options) {
-  const barcodeEncoder = new UPC(upcNumberText);
+  const barcodeEncoder = new UPC(upcNumberText, { text: upcNumberText });
   if (!barcodeEncoder.valid()) {
     console.error(`Invalid UPC "${upcNumberText}"`);
     return;
   }
 
   const encoding = barcodeEncoder.encode();
-  console.log(encoding)
 
   // ---- Render ----
 
